@@ -9,13 +9,15 @@ spot_shape = "circle"
 
 #-----initialize turtle-----
 spot = trtl.turtles()
-spot_shape(spot_shape)
-spot_shapesize(spot_size)
-spot_fillcolor(spot_color)
+spot.shape(spot_shape)
+spot.shapesize(spot_size)
+spot.fillcolor(spot_color)
 
 #-----game functions--------
-
+def spot_clicked(x, y):
+    print("Hello World")
 
 #-----events----------------
+spot.onclick(spot_clicked)
 wn = trtl.Screen()
 wn.mainloop()
