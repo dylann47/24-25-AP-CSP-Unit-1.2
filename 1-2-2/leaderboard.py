@@ -45,17 +45,14 @@ def get_scores(file_name):
         leader_score = ""
         index = 0
 
-        # TODO 3: use a while loop to index beyond the comma, skipping the player's name
         while (line[index] != ","):
             index = index + 1
         index = index + 1
 
-        # TODO 4: use a while loop to get the score
         while (line[index] != "\n"):
             leader_score = leader_score + line[index]
             index = index + 1
 
-        # TODO 5: add the player score to the scores list
         scores.append(int(leader_score))
     print("scores:", scores)
 
@@ -68,15 +65,14 @@ def get_scores(file_name):
 # update leaderboard by inserting the current player and score to the list at the correct position
 def update_leaderboard(file_name, leader_names, leader_scores, player_name, player_score):
     index = 0
-    # TODO 8: loop through all the scores in the existing leaderboard list
-    '''
+
     for index in range(len(leader_scores)):
       # TODO 9: check if this is the position to insert new score at
       if (player_score >= leader_scores[index]):
         break
       else:
         index = index + 1
-    '''
+
 
     # TODO 10: insert new player and score
 
@@ -119,11 +115,9 @@ def draw_leaderboard(high_scorer, leader_names, leader_scores, turtle_object, pl
     turtle_object.goto(-160, int(turtle_object.ycor()) - 50)
     turtle_object.pendown()
 
-    # TODO 14: display message about player making/not making leaderboard
-    '''
       turtle_object.write("Congratulations!\nYou made the leaderboard!", font=font_setup)
       turtle_object.write("Sorry!\nYou didn't make the leaderboard.\nMaybe next time!", font=font_setup)
-    '''
+
 
     # move turtle to a new line
     turtle_object.penup()
