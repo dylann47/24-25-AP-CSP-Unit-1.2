@@ -18,6 +18,8 @@ def draw_apple(active_apple):
 
 def apple_down(active_apple):
   x_coordinate = active_apple.xcor()
+  y_coordinate = active_apple.ycor()
+  active_apple.goto(x_coordinate, y_coordinate - 300)
 #-----function calls-----
 draw_apple(apple)
 apple_down(apple)
