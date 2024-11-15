@@ -14,6 +14,7 @@ wn.addshape(apple_image) # Make the screen aware of the new file
 
 wn.bgpic("background.gif")
 apple = trtl.Turtle()
+apple.penup()
 
 #-----functions-----
 # given a turtle, set that turtle to be shaped by the image file
