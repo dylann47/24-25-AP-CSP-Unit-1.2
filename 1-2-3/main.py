@@ -1,8 +1,9 @@
 import random as rand
 import turtle as trtl
 
-#Game Setup
+#-----setup-----
 apple_image = "apple.gif" # Store the file name of your shape
+
 ground_height = -200
 apple_letter_x_offset = -25
 apple_letter_y_offset = -50
@@ -19,10 +20,14 @@ apple = trtl.Turtle()
 apple.penup()
 wn.tracer(False)
 
-#Game Functions
-def draw_apple(active_apple):
+for i in range (5):
+  apple_list.append(trtl.turtles())
+  apple_letters.append(rand.choice(letters))
+
+#-----functions-----
+def draw_apple(active_apple, letter):
   active_apple.shape(apple_image)
-  draw_letter("A", active_apple)
+  draw_letter(letter, active_apple)
   wn.update()
 
 def drop_apple():
@@ -39,15 +44,28 @@ def draw_letter(letter, active_apple):
   active_apple.write(letter, font=("Arial", 56, "bold"))
   active_apple.setpos(remember_position)
 
+def drop_apple(index):
+  apple_list[index].penup()
+  apple_list[index].clear()
+  apple_list[index].sety(-150)
+  apple_list[index].hideturtle()
+
+def typed(A):
+  for i in range (5):
+    if apple_letters[i] == "A":
+
 #   a123_apple_letters.py
 #TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
 # a new location on the tree, only if the list of letters is not empty. Associate the
 # turtle with a new letter selected at random from the list of letters
-def tree(apple):
+def reset_apple(apple):
   if len(letters) > 0:
     newX = rand.randint(-200, 200)
-    newY = apple.ycor()
-    new_letter = rand.choice(letters)
+    newY = 0
+    new_letter = rand.randint(0, len(letters))
+    apple.goto(newX, newY)
+    draw_apple(apple, letters.pop(new_letter))
+
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
 # list and draws that letter on that turtle (apple)
@@ -61,8 +79,10 @@ def tree(apple):
 # add the new apples to a list of apples to be used in the rest of the program.
 # The loop below executes the correct number of times by using the range() function
 # to create a list of numbers to iterate over.
-for i in range(0, number_of_apples):
-    #Your code here
+for i in range(5):
+  draw_apple(i)
+
+
 
 #TODO Create a function that takes a letter as its parameter, uses that letter to retrieve the
 # corresponding turtle (apple) and causes both to drop from the tree simultaneously. Once the
@@ -77,6 +97,7 @@ for i in range(0, number_of_apples):
 # onkeypress requires that you name one function that must take
 # no arguments to be called when the specified key is pressed.
 
+#-----function calls-----
 wn.listen()
 trtl.mainloop()
 draw_apple(apple)
