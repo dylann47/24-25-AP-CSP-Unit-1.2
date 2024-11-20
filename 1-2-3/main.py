@@ -1,5 +1,6 @@
 import random as rand
 import turtle as trtl
+from operator import index
 
 #-----setup-----
 apple_image = "apple.gif" # Store the file name of your shape
@@ -7,7 +8,7 @@ apple_image = "apple.gif" # Store the file name of your shape
 ground_height = -200
 apple_letter_x_offset = -25
 apple_letter_y_offset = -50
-letters = ["A", "S", "D", "F", "H", "J", "K", "L"]
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 apple_list = []
 apple_letters = []
 
@@ -17,7 +18,6 @@ wn.addshape(apple_image) # Make the screen aware of the new file
 
 wn.bgpic("background.gif")
 apple = trtl.Turtle()
-apple.penup()
 wn.tracer(False)
 
 for i in range (5):
@@ -27,22 +27,16 @@ for i in range (5):
 #-----functions-----
 def draw_apple(active_apple, letter):
   active_apple.shape(apple_image)
-  draw_letter(letter, active_apple)
-  wn.update()
-
-def drop_apple():
-  wn.tracer(True)
-  apple.goto(apple.xcor(), ground_height)
-  apple.clear()
-  apple.hideturtle()
+  apple.list[index].penup()
   wn.tracer(False)
-
-def draw_letter(letter, active_apple):
-  active_apple.color("white")
-  remember_position = active_apple.position()
-  active_apple.setpos(active_apple.xcor() + apple_letter_x_offset,active_apple.ycor() + apple_letter_y_offset)
-  active_apple.write(letter, font=("Arial", 56, "bold"))
-  active_apple.setpos(remember_position)
+  apple.list[index].setx(rand.randint(-150, 150))
+  apple.list[index].sety(rand.randint(-15, 100))
+  apple.list[index].color("White")
+  apple.list[index].write(apple_letters[index],font=("Arial", 30, "bold"))
+  apple.list[index].sety(apple_list[index].ycor() + 30)
+  apple.list[index].showturtle()
+  wn.tracer(False)
+  wn.update()
 
 def drop_apple(index):
   apple_list[index].penup()
@@ -50,14 +44,6 @@ def drop_apple(index):
   apple_list[index].sety(-150)
   apple_list[index].hideturtle()
 
-def typed(A):
-  for i in range (5):
-    if apple_letters[i] == "A":
-
-#   a123_apple_letters.py
-#TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
-# a new location on the tree, only if the list of letters is not empty. Associate the
-# turtle with a new letter selected at random from the list of letters
 def reset_apple(apple):
   if len(letters) > 0:
     newX = rand.randint(-200, 200)
@@ -66,6 +52,135 @@ def reset_apple(apple):
     apple.goto(newX, newY)
     draw_apple(apple, letters.pop(new_letter))
 
+def typeda():
+  for i in range (5):
+    if apple_letters[i] == "A":
+      drop_apple(i)
+
+def typedb():
+  for i in range (5):
+    if apple_letters[i] == "B":
+      drop_apple(i)
+
+def typedC():
+  for i in range (5):
+    if apple_letters[i] == "C":
+      drop_apple(i)
+
+def typedD():
+  for i in range (5):
+    if apple_letters[i] == "D":
+      drop_apple(i)
+
+def typedE():
+  for i in range (5):
+    if apple_letters[i] == "E":
+      drop_apple(i)
+
+def typedF():
+  for i in range(5):
+    if apple_letters[i] == "F":
+      drop_apple(i)
+
+def typedG():
+  for i in range (5):
+    if apple_letters[i] == "G":
+      drop_apple(i)
+
+def typedH():
+  for i in range (5):
+    if apple_letters[i] == "H":
+      drop_apple(i)
+
+def typedI():
+  for i in range (5):
+    if apple_letters[i] == "I":
+      drop_apple(i)
+
+def typedJ():
+  for i in range (5):
+    if apple_letters[i] == "J":
+      drop_apple(i)
+
+def typedK():
+  for i in range (5):
+    if apple_letters[i] == "K":
+      drop_apple(i)
+
+def typedL():
+  for i in range (5):
+    if apple_letters[i] == "L":
+      drop_apple(i)
+
+def typedM():
+  for i in range (5):
+    if apple_letters[i] == "M":
+      drop_apple(i)
+
+def typedN():
+  for i in range (5):
+    if apple_letters[i] == "N":
+      drop_apple(i)
+
+def typedO():
+  for i in range (5):
+    if apple_letters[i] == "O":
+      drop_apple(i)
+
+def typedP():
+  for i in range (5):
+    if apple_letters[i] == "P":
+      drop_apple(i)
+
+def typedQ():
+  for i in range (5):
+    if apple_letters[i] == "Q":
+      drop_apple(i)
+
+def typedR():
+  for i in range (5):
+    if apple_letters[i] == "R":
+      drop_apple(i)
+
+def typedS():
+  for i in range (5):
+    if apple_letters[i] == "S":
+      drop_apple(i)
+
+def typedT():
+  for i in range (5):
+    if apple_letters[i] == "T":
+      drop_apple(i)
+
+def typedU():
+  for i in range (5):
+    if apple_letters[i] == "U":
+      drop_apple(i)
+
+def typedV():
+  for i in range (5):
+    if apple_letters[i] == "V":
+      drop_apple(i)
+
+def typedW():
+  for i in range (5):
+    if apple_letters[i] == "W":
+      drop_apple(i)
+
+def typedY():
+  for i in range (5):
+    if apple_letters[i] == "Y":
+      drop_apple(i)
+
+def typedZ():
+  for i in range (5):
+    if apple_letters[i] == "Z":
+      drop_apple(i)
+
+#   a123_apple_letters.py
+#TODO Create a function that takes a turtle as its parameter and gives that turtle (apple)
+# a new location on the tree, only if the list of letters is not empty. Associate the
+# turtle with a new letter selected at random from the list of letters
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
 # list and draws that letter on that turtle (apple)
@@ -79,10 +194,6 @@ def reset_apple(apple):
 # add the new apples to a list of apples to be used in the rest of the program.
 # The loop below executes the correct number of times by using the range() function
 # to create a list of numbers to iterate over.
-for i in range(5):
-  draw_apple(i)
-
-
 
 #TODO Create a function that takes a letter as its parameter, uses that letter to retrieve the
 # corresponding turtle (apple) and causes both to drop from the tree simultaneously. Once the
@@ -100,7 +211,7 @@ for i in range(5):
 #-----function calls-----
 wn.listen()
 trtl.mainloop()
-draw_apple(apple)
+draw_apple(apple, "a")
 wn.onkeypress(drop_apple, "a")
 
 wn.listen()
