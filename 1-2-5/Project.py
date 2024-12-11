@@ -7,12 +7,12 @@ import random as rand
 wn = trtl.Screen()
 
 #Images
-blue_alien = "BlueAlien.png"
-#purple_alien = "PurpleAlien.png"
-#red_alien = "Red Alien.png"
-#indigo_alien = "Indigoalien.png"
-#human = "Human.png"
-#background = "background project.jpg"
+blue_alien = "BlueAlien.gif"
+purple_alien = "PurpleAlien.gif"
+red_alien = "RedAlien.gif"
+indigo_alien = "IndigoAlien.gif"
+human = "Human.gif"
+background = "bgproject2.gif"
 
 #Add turtle shapes
 wn.addshape(blue_alien)
@@ -36,7 +36,7 @@ player.forward(10)
 
 #Alien vertical turtle
 alien_vert = trtl.Turtle()
-alien_vert.shape(rand.randchoice(aliens))
+alien_vert.shape(alien[rand.randint(0, (len(aliens))])
 alien_vert.penup()
 player.forward(20)
 
