@@ -40,7 +40,13 @@ player.forward(10)
 
 #Alien turtle
 alien = trtl.Turtle()
-alien.shape(blue_alien)
+alien.penup()
+choice = rand.randint(0,3)
+alien.goto(-150,-150)
+
+#alien.shape(purple_alien)
+alien.shape(aliens[choice])
+
 alien.penup()
 
 #Movement functions
