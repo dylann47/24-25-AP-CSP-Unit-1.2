@@ -33,9 +33,7 @@ player = trtl.Turtle()
 player.turtlesize()
 player.shape(human)
 player.penup()
-player.forward(10)
-
-#Randomizer
+player.goto(150,150)
 
 #Alien turtle
 alien = trtl.Turtle()
@@ -120,20 +118,23 @@ def d_right():
 #Alien
 def i_up():
     alien.setheading(90)
-    alien.forward(70)
+    alien.forward(50)
+    check_collision()
 
 def k_down():
     alien.setheading(90)
-    alien.backward(70)
+    alien.backward(50)
+    check_collision()
 
 def j_left():
     alien.setheading(180)
-    alien.forward(70)
-
+    alien.forward(50)
+    check_collision()
 
 def l_right():
     alien.setheading(180)
-    alien.backward(70)
+    alien.backward(50)
+    check_collision()
 
 
 #Player movement
