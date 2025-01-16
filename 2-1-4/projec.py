@@ -5,7 +5,8 @@ import turtle as trtl
 import random as random
 
 #--Turtle Screen Initialization--
-wn = trtl.screen()
+screen = turtle.Screen()
+screen.setup(width=600, height=600)
 
 #--Board--
 board = [["" for _ in range(3)] for _ in range(3)]
