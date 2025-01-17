@@ -39,7 +39,7 @@ def draw_x(x, symbol):
     turtle.write(symbol, align="center", font=("Arial", 24, "normal"))
 
 #--Click For Panels--
-def panel_from_click(x, y):
+
 
 
 #--Drawing the Board--
