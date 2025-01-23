@@ -1,6 +1,6 @@
 #--Setup--
 #--Import Statements--
-import turtle
+import turtle as turtle
 
 #--Turtle Screen Initialization--
 screen = turtle.Screen()
