@@ -42,7 +42,7 @@ def draw_symbol(row, col, symbol):
     turtle.goto(x,y)
     turtle.write(symbol, align="center", font=("Arial", 36, "normal"))
 
-#--Click For Panels--
+#--Click For Panels-- **Ask how to cite external website**
 def click_on_panel(x,y):
     col = int((x + offset) // panel_size)
     row = int((offset - y) // panel_size)
