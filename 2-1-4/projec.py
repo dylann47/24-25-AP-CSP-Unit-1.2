@@ -39,9 +39,11 @@ def draw_symbol(row, col, symbol):
     y = 200 - (row * panel_size)
 
     if symbol == "X":
-        turtle.pencolor("red")
-    if symbol == "O":
-        turtle.pencolor("blue")
+        turtle.pencolor("Orange")
+    elif symbol == "O":
+        turtle.pencolor("Teal")
+    else:
+        turtle.pencolor("black")
 
     turtle.penup()
     turtle.goto(x,y)
