@@ -38,6 +38,11 @@ def draw_symbol(row, col, symbol):
     x = -200 + (col * panel_size)
     y = 200 - (row * panel_size)
 
+    if symbol == "X":
+        turtle.pencolor("red")
+    if symbol == "O":
+        turtle.pencolor("blue")
+
     turtle.penup()
     turtle.goto(x,y)
     turtle.write(symbol, align="center", font=("Arial", 36, "normal"))
@@ -47,14 +52,13 @@ def click_on_panel(x,y):
     col = int((x + offset) // panel_size)
     row = int((offset - y) // panel_size)
 
-    if 0 <= row < 3 and 0 <= col < 3 and tic_tac_toe_board[row][col] =="":
+    if row in (0, 1, 2) and col in (0, 1, 2) and tic_tac_toe_board[row][col] == "":
         user_input = screen.textinput("TicTacToe", "Choose Input").upper()
         if user_input in ["X", "O"]:
             tic_tac_toe_board[row][col] = user_input
             draw_symbol(row, col, user_input)
         else:
             print("Not a valid choice")
-
 
 #--Drawing the Board--
 draw_board()
